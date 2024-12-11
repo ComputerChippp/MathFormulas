@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Formulas Collection</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        /* Styles for the iframe screen */
+        #gameScreen {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        #gameScreen iframe {
+            width: 90%;
+            height: 90%;
+            border: none;
+            margin-top: 5%;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function handleFormSubmission(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the input values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Check if the inputs match specific criteria
+            if (name === "Pizza Tower" && email === "noise@pizza.com" && message === "Noise is calling pick up phone") {
+                // Display the Drive Mad game screen
+                document.getElementById('mainContent').style.display = 'none';
+                const gameScreen = document.getElementById('gameScreen');
+                gameScreen.style.display = 'block';
+                // Set the iframe to the raw GitHub URL
+                document.getElementById('gameIframe').src = "https://pizzatowergame.io/";
+            } else {
+                alert("Thank you for contacting us!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Math Formulas Collection</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#formulas">Formulas</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="mainContent">
+        <section id="home">
+            <h2>Home</h2>
+            <p>This site includes a plethora of math formulas, if you're stuck, from simple to complex. See what we have in store at the formulas section!</p>
+        </section>
+
+        <section id="about">
+            <h2>About</h2>
+            <p>This website is a math formula collection.</p>
+        </section>
+
+        <section id="formulas">
+            <h2>Formulas</h2>
+            <p>Check out the formulas I offer.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <form onsubmit="handleFormSubmission(event)">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Hidden game screen -->
+    <div id="gameScreen">
+        <iframe id="gameIframe" src="" title="Game"></iframe>
+        <br>
+        <button onclick="location.reload()">Return to Site</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 NoiseMath. All rights reserved.</p>
+    </footer>
+</body>
+</html>
