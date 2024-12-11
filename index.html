@@ -30,55 +30,67 @@
             cursor: pointer;
         }
     </style>
-    <script>
-        function handleFormSubmission(event) {
-            event.preventDefault(); // Prevent the default form submission
+<script>
+    function handleFormSubmission(event) {
+        event.preventDefault(); // Prevent the default form submission
 
-            // Get the input values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+        // Get the input values
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
 
-            // Check if the inputs match specific criteria
-            if (name === "Pizza Tower" && email === "noise@pizza.com" && message === "Noise is calling pick up phone") {
-                // Display the Pizza Tower game screen
-                document.getElementById('mainContent').style.display = 'none';
-                const gameScreen = document.getElementById('gameScreen');
-                gameScreen.style.display = 'block';
-                // Set the iframe
-                document.getElementById('gameIframe').src = "https://kdata1.com/2021/03/3527391/2.1/";
-                alert("Pizza?");
-            } else {
-                
-            }
-
-            // Check if the inputs match specific criteria
-            if (name === "Drive Mad" && email === "drive@mad.com" && message === "Fancade") {
-                // Display the Drive Mad game screen
-                document.getElementById('mainContent').style.display = 'none';
-                const gameScreen = document.getElementById('gameScreen');
-                gameScreen.style.display = 'block';
-                // Set the iframe
-                document.getElementById('gameIframe').src = "https://www.drivemad.com/index.html";
-                alert("Dont drunk drive!");
-            } else {
-                
-            }
-
-            // Check if the inputs match specific criteria
-            if (name === "Stacktris" && email === "tetris@physics.com" && message === "Fancade") {
-                // Display the Drive Mad game screen
-                document.getElementById('mainContent').style.display = 'none';
-                const gameScreen = document.getElementById('gameScreen');
-                gameScreen.style.display = 'block';
-                // Set the iframe
-                document.getElementById('gameIframe').src = "https://play.fancade.com/5BEC8352E4E078B1";
-                alert("Tetra pack");
-            } else {
-                
-            }
+        // Check if the inputs match specific criteria
+        if (name === "Pizza Tower" && email === "noise@pizza.com" && message === "Noise is calling pick up phone") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://kdata1.com/2021/03/3527391/2.1/";
+            alert("Pizza?");
+        } else if (name === "Drive Mad" && email === "drive@mad.com" && message === "Fancade") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://www.drivemad.com/index.html";
+            alert("Don't drunk drive!");
+        } else if (name === "Stacktris" && email === "tetris@physics.com" && message === "Fancade") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://play.fancade.com/5BEC8352E4E078B1";
+            alert("Tetra pack");
+        } else if (name === "Custom" && email === "http@web.com" && message.startsWith("http")) {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = message;
+            alert("Custom Website go BRRRRRRRRRRRRRRRRR!!!");
+        } else if (name === "Stickmanhook" && email === "stickman@hook.com" && message === "Stickmanhook") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://stickman.pro/iframe/index.html";
+            alert("Weeeeeeeeee!");
+        } else if (name === "Fancade" && email === "fancade@fancade.com" && message === "Fancade") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://play.fancade.com/";
+            alert("Fancaaaaaaaaaaaaaade!!");
         }
-    </script>
+        else if (name === "Bloons" && email === "bloons@monkey.com" && message === "Bloons") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://bloons-towerdefense.github.io/file/";
+            alert("Munke");
+        }
+        else {
+            alert("Invalid input. Please try again!");
+        }
+    }
+</script>
+
+
 </head>
 <body>
     <header>
