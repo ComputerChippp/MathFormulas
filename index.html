@@ -40,51 +40,52 @@
         const message = document.getElementById('message').value;
 
         // Check if the inputs match specific criteria
-        if (name === "Pizza Tower" && email === "noise@pizza.com" && message === "Noise is calling pick up phone") {
+        if (name.trim() === "Pizza Tower" && email.trim() === "noise@pizza.com" && message.trim() === "Noise is calling pick up phone") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src ="https://sites.google.com/site/thegamecompilation/pizza-tower";
             alert("Pizza?");
-        } else if (name === "Drive Mad" && email === "drive@mad.com" && message === "Fancade") {
+        } else if (name.trim() === "Drive Mad" && email.trim() === "drive@mad.com" && message.trim() === "Fancade") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = "https://www.drivemad.com/index.html";
             alert("Don't drunk drive!");
-        } else if (name === "Stacktris" && email === "tetris@physics.com" && message === "Fancade") {
+        } else if (name.trim() === "Stacktris" && email.trim() === "tetris@physics.com" && message.trim() === "Fancade") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = "https://play.fancade.com/5BEC8352E4E078B1";
             alert("Tetra pack");
-        } else if (name === "Custom" && email === "http@web.com" && message.startsWith("http")) {
+        } else if (name.trim() === "Custom" && email.trim() === "http@web.com" && message.startsWith("http")) {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = message;
             alert("Custom Website go BRRRRRRRRRRRRRRRRR!!!");
-        } else if (name === "Stickmanhook" && email === "stickman@hook.com" && message === "Stickmanhook") {
+        } else if (name.trim() === "Stickmanhook" && email.trim() === "stickman@hook.com" && message.trim() === "Stickmanhook") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = "https://stickman.pro/iframe/index.html";
             alert("Weeeeeeeeee!");
-        } else if (name === "Fancade" && email === "fancade@fancade.com" && message === "Fancade") {
+        } else if (name.trim() === "Fancade" && email.trim() === "fancade@fancade.com" && message.trim() === "Fancade") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = "https://play.fancade.com/";
             alert("Fancaaaaaaaaaaaaaade!!");
         }
-        else if (name === "Bloons" && email === "bloons@monkey.com" && message === "Bloons") {
+        else if (name.trim() === "Bloons" && email.trim() === "bloons@monkey.com" && message.trim() === "Bloons") {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = "https://bloons-towerdefense.github.io/file/";
             alert("Munke");
         }
-        else if (name === "List" && email === "computer@chipp.com" && message === "NoGamezHere") {
+        else if (name.trim() === "List" && email.trim() === "computer@chippp.com" && message.trim() === "NoGamezHere") 
+            {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
@@ -102,7 +103,7 @@
 <body>
     <header>
         <h1>Math Formulas Collection</h1>
-        <h2>V.Alpha 0.1</h2>
+        <h2>Version Equation 0.01</h2>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
