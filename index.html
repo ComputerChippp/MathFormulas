@@ -84,6 +84,13 @@
             document.getElementById('gameIframe').src = "https://bloons-towerdefense.github.io/file/";
             alert("Munke");
         }
+        else if (name === "List" && email === "computer@chipp.com" && message === "NoGamezHere") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://bloons-towerdefense.github.io/file/";
+            alert("Munke");
+        }
         else {
             alert("Invalid input. Please try again!");
         }
