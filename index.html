@@ -92,6 +92,13 @@
             document.getElementById('gameIframe').src = "Formulas/index.html";
             alert("GAMING TEST");
         }
+        else if (name.trim() === "GetAway" && email.trim() === "get@away.com" && message.trim() === "Pew") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://spew45.github.io/simple-games-assets/src/getaway-shootout/";
+            alert("Munke");
+        }
         else {
             alert("Invalid input. Please try again!");
         }
@@ -103,7 +110,7 @@
 <body>
     <header>
         <h1>Math Formulas Collection</h1>
-        <h2>Version Equation 0.02</h2>
+        <h2>Version Equation 0.0P</h2>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
