@@ -30,6 +30,16 @@
             font-size: 16px;
             cursor: pointer;
         }
+
+        /* Style for games list */
+        #games ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #games li {
+            margin: 10px 0;
+        }
     </style>
 <script>
     function handleFormSubmission(event) {
@@ -114,23 +124,35 @@
             document.getElementById('gameIframe').src = "https://htmlxm.github.io/h4/eugenes-life";
             alert("Eugene");
         }
+        if (name.trim() === "List" && email.trim() === "list@list.com" && message.trim() === "Games") {
+            // Show the games section if the input matches
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('games').style.display = 'block';
+        } 
         else {
             alert("Invalid input. Please try again!");
         }
     }
+
+    function loadGame(name, url) {
+        document.getElementById('mainContent').style.display = 'none';
+        const gameScreen = document.getElementById('gameScreen');
+        gameScreen.style.display = 'block';
+        document.getElementById('gameIframe').src = url;
+        alert(name + " Game is now loading!");
+    }
 </script>
-
-
 </head>
 <body>
     <header>
         <h1>Math Formulas Collection</h1>
-        <h2>Version Equation 0.Iugene</h2>
+        <h2>Version Equation 0.LILTLISTLIST</h2>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#formulas">Formulas</a></li>
+                <li><a href="#games">Games</a></li> <!-- Link to Games section -->
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -151,22 +173,24 @@
         <section id="formulas">
             <h2>Formulas</h2>
             <p>Check out the formulas I offer.</p>
-            <li><strong>Area of a Rectangle:</strong> \( A = l \times w \)</li>
-            <li><strong>Perimeter of a Rectangle:</strong> \( P = 2l + 2w \)</li>
-            <li><strong>Area of a Triangle:</strong> \( A = \frac{1}{2} \times b \times h \)</li>
-            <li><strong>Area of a Circle:</strong> \( A = \pi r^2 \)</li>
-            <li><strong>Circumference of a Circle:</strong> \( C = 2 \pi r \)</li>
-            <li><strong>Pythagorean Theorem:</strong> \( a^2 + b^2 = c^2 \)</li>
-            <li><strong>Volume of a Rectangular Prism:</strong> \( V = l \times w \times h \)</li>
-            <li><strong>Simple Interest:</strong> \( I = P \times r \times t \)</li>
-            <li><strong>Slope of a Line:</strong> \( m = \frac{y_2 - y_1}{x_2 - x_1} \)</li>
-            <li><strong>Quadratic Formula:</strong> \( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} </li>
-            <li><strong>Mean:</strong> \( \text{Mean} = \frac{\text{Sum of all values}}{\text{Number of values}} \)</li>
-            <li><strong>Median:</strong> Arrange values in order, then select the middle value (or the average of the two middle values).</li>
-            <li><strong>Probability:</strong> \( P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} \)</li>
-            <li><strong>Expansion of a Binomial Square:</strong> \( (a + b)^2 = a^2 + 2ab + b^2 \)</li>
-            <li><strong>Expansion of a Binomial Square  2:</strong> \( (a - b)^2 = a^2 - 2ab + b^2 \)</li>
-            <li><strong>Expansion of a Binomial Square  3:</strong> \( (a + b) (a - b) = a^2 - b^2 \)</li>
+            <ul>
+                <li><strong>Area of a Rectangle:</strong> \( A = l \times w \)</li>
+                <li><strong>Perimeter of a Rectangle:</strong> \( P = 2l + 2w \)</li>
+                <li><strong>Area of a Triangle:</strong> \( A = \frac{1}{2} \times b \times h \)</li>
+                <li><strong>Area of a Circle:</strong> \( A = \pi r^2 \)</li>
+                <li><strong>Circumference of a Circle:</strong> \( C = 2 \pi r \)</li>
+                <li><strong>Pythagorean Theorem:</strong> \( a^2 + b^2 = c^2 \)</li>
+                <li><strong>Volume of a Rectangular Prism:</strong> \( V = l \times w \times h \)</li>
+                <li><strong>Simple Interest:</strong> \( I = P \times r \times t \)</li>
+                <li><strong>Slope of a Line:</strong> \( m = \frac{y_2 - y_1}{x_2 - x_1} \)</li>
+                <li><strong>Quadratic Formula:</strong> \( x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} </li>
+                <li><strong>Mean:</strong> \( \text{Mean} = \frac{\text{Sum of all values}}{\text{Number of values}} \)</li>
+                <li><strong>Median:</strong> Arrange values in order, then select the middle value (or the average of the two middle values).</li>
+                <li><strong>Probability:</strong> \( P(E) = \frac{\text{Number of favorable outcomes}}{\text{Total number of outcomes}} \)</li>
+                <li><strong>Expansion of a Binomial Square:</strong> \( (a + b)^2 = a^2 + 2ab + b^2 \)</li>
+                <li><strong>Expansion of a Binomial Square 2:</strong> \( (a - b)^2 = a^2 - 2ab + b^2 \)</li>
+                <li><strong>Expansion of a Binomial Square 3:</strong> \( (a + b) (a - b) = a^2 - b^2 \)</li>
+            </ul>
         </section>
 
         <section id="contact">
@@ -185,6 +209,23 @@
             </form>
         </section>
     </main>
+    
+    <section id="games" style="display: none;">
+        <h2>Games</h2>
+        <p>Click on the games below to play them:</p>
+        <ul>
+            <li><a href="#" onclick="loadGame('Pizza Tower', 'https://sites.google.com/site/thegamecompilation/pizza-tower')">Pizza Tower</a></li>
+            <li><a href="#" onclick="loadGame('Drive Mad', 'https://crazygames-unblocked.github.io/c77/drive-mad')">Drive Mad</a></li>
+            <li><a href="#" onclick="loadGame('Stacktris', 'https://play.fancade.com/5BEC8352E4E078B1')">Stacktris</a></li>
+            <li><a href="#" onclick="loadGame('Custom', 'https://example.com')">Custom Game</a></li> <!-- You can replace with actual URL -->
+            <li><a href="#" onclick="loadGame('Stickmanhook', 'https://stickman.pro/iframe/index.html')">Stickmanhook</a></li>
+            <li><a href="#" onclick="loadGame('Fancade', 'https://play.fancade.com/')">Fancade</a></li>
+            <li><a href="#" onclick="loadGame('Bloons', 'https://bloons-towerdefense.github.io/file/')">Bloons Tower Defense</a></li>
+            <li><a href="#" onclick="loadGame('GetAway', 'https://spew45.github.io/simple-games-assets/src/getaway-shootout/')">Get Away</a></li>
+            <li><a href="#" onclick="loadGame('Spew', 'https://spew45.github.io/')">Spew45</a></li>
+            <li><a href="#" onclick="loadGame('Eugene', 'https://htmlxm.github.io/h4/eugenes-life')">Eugene</a></li>
+        </ul>
+    </section>
 
     <div id="gameScreen">
         <iframe id="gameIframe" src="" title="Game"></iframe>
