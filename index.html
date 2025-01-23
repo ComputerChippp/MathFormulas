@@ -129,6 +129,14 @@
             document.getElementById('mainContent').style.display = 'none';
             document.getElementById('games').style.display = 'block';
         } 
+        else if (name.trim() === "Backflip" && email.trim() === "backflip@3d.com" && message.trim() === "Look Mom!") {
+            document.getElementById('mainContent').style.display = 'none';
+            const gameScreen = document.getElementById('gameScreen');
+            gameScreen.style.display = 'block';
+            document.getElementById('gameIframe').src = "https://spew45.github.io/game-assets/backflip-dive-3d/";
+            alert("Yahoo");
+        }
+            
         else {
             alert("Invalid input. Please try again!");
         }
@@ -146,7 +154,7 @@
 <body>
     <header>
         <h1>Math Formulas Collection</h1>
-        <h2>Version Equation 0.googol</h2>
+        <h2>Version Equation 0.custom</h2>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
@@ -218,13 +226,16 @@
             <li><a href="#" onclick="loadGame('Pizza Tower', 'https://sites.google.com/site/thegamecompilation/pizza-tower')">Pizza Tower</a></li>
             <li><a href="#" onclick="loadGame('Drive Mad', 'https://crazygames-unblocked.github.io/c77/drive-mad')">Drive Mad</a></li>
             <li><a href="#" onclick="loadGame('Stacktris', 'https://play.fancade.com/5BEC8352E4E078B1')">Stacktris</a></li>
-            <li><a href="#" onclick="loadGame('Custom', 'https://example.com')">Custom Game</a></li> <!-- You can replace with actual URL -->
+            <input type="url" id="customLink" name="CustomLink" pattern="https?://.*" placeholder="http://example.com" required>
+            <button type="submit">Submit</button>
+            <li><a id="gameLink" href="#" onclick="loadGame('Custom', 'https://example.com')">Custom Game</a></li> <!-- You can replace with actual URL -->
             <li><a href="#" onclick="loadGame('Stickmanhook', 'https://stickman.pro/iframe/index.html')">Stickmanhook</a></li>
             <li><a href="#" onclick="loadGame('Fancade', 'https://play.fancade.com/')">Fancade</a></li>
             <li><a href="#" onclick="loadGame('Bloons', 'https://bloons-towerdefense.github.io/file/')">Bloons Tower Defense</a></li>
-            <li><a href="#" onclick="loadGame('GetAway', 'https://spew45.github.io/simple-games-assets/src/getaway-shootout/')">Get Away</a></li>
-            <li><a href="#" onclick="loadGame('Spew', 'https://spew45.github.io/')">Spew45</a></li>
+            <li><a href="#" onclick="loadGame('GetawayShootout', 'https://spew45.github.io/simple-games-assets/src/getaway-shootout/')">Getaway Shootout</a></li>
+            <li><a href="#" onclick="loadGame('Spew45', 'https://spew45.github.io/')">Spew45</a></li>
             <li><a href="#" onclick="loadGame('Eugene', 'https://htmlxm.github.io/h4/eugenes-life')">Eugene</a></li>
+            <li><a href="#" onclick="loadGame('Backflip3D', 'https://spew45.github.io/game-assets/backflip-dive-3d/')">Backflip 3D</a></li>
         </ul>
     </section>
 
