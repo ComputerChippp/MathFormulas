@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kurse</title>
     <link rel="icon" href="./favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <style>
-        /* Styles for the iframe screen */
         #gameScreen {
             display: none;
             width: 100vw;
@@ -31,7 +30,6 @@
             cursor: pointer;
         }
 
-        /* Style for games list */
         #games ul {
             list-style-type: none;
             padding: 0;
@@ -40,104 +38,46 @@
         #games li {
             margin: 10px 0;
         }
+
     </style>
 <script>
     function handleFormSubmission(event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Get the input values
+        event.preventDefault();
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        // Check if the inputs match specific criteria
-        if (name.trim() === "Pizza Tower" && email.trim() === "noise@pizza.com" && message.trim() === "Noise is calling pick up phone") {
+        const gameData = [
+            {name: "Pizza Tower", email: "noise@pizza.com", message: "Noise is calling pick up phone", url: "https://sites.google.com/site/thegamecompilation/pizza-tower", alert: "Pizza?"},
+            {name: "Drive Mad", email: "drive@mad.com", message: "Fancade", url: "https://crazygames-unblocked.github.io/c77/drive-mad", alert: "Don't drunk drive!"},
+            {name: "Stacktris", email: "tetris@physics.com", message: "Fancade", url: "https://play.fancade.com/5BEC8352E4E078B1", alert: "Tetra pack"},
+            {name: "Stickmanhook", email: "stickman@hook.com", message: "Stickmanhook", url: "https://stickman.pro/iframe/index.html", alert: "Weeeeeeeeee!"},
+            {name: "Fancade", email: "fancade@fancade.com", message: "Fancade", url: "https://play.fancade.com/", alert: "Fancaaaaaaaaaaaaaade!!"},
+            {name: "Bloons", email: "bloons@monkey.com", message: "Bloons", url: "https://bloons-towerdefense.github.io/file/", alert: "Munke"},
+            {name: "GetAway", email: "get@away.com", message: "Pew", url: "https://spew45.github.io/simple-games-assets/src/getaway-shootout/", alert: "Oh shoot"},
+            {name: "Spew", email: "spew@45.com", message: "Spew45", url: "https://spew45.github.io/", alert: "UnblockedGames"},
+            {name: "Eugene", email: "eugene@eugene.eugene", message: "Eugene", url: "https://htmlxm.github.io/h4/eugenes-life", alert: "Eugene"},
+            {name: "Backflip", email: "backflip@3d.com", message: "Look Mom!", url: "https://spew45.github.io/game-assets/backflip-dive-3d/", alert: "Yahoo"}
+        ];
+
+        const customEntry = {
+            name: "Custom", email: "http@web.com", messageStartsWith: "http", alert: "Custom Website go BRRRRRRRRRRRRRRRRR!!!"};
+
+        const match = gameData.find(game => game.name === name.trim() && game.email === email.trim() && game.message === message.trim());
+
+        if (match) {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src ="https://sites.google.com/site/thegamecompilation/pizza-tower";
-            alert("Pizza?");
-        } else if (name.trim() === "Drive Mad" && email.trim() === "drive@mad.com" && message.trim() === "Fancade") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://crazygames-unblocked.github.io/c77/drive-mad";
-            alert("Don't drunk drive!");
-        } else if (name.trim() === "Stacktris" && email.trim() === "tetris@physics.com" && message.trim() === "Fancade") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://play.fancade.com/5BEC8352E4E078B1";
-            alert("Tetra pack");
-        } else if (name.trim() === "Custom" && email.trim() === "http@web.com" && message.startsWith("http")) {
+            document.getElementById('gameIframe').src = match.url;
+            alert(match.alert);
+        } else if (name.trim() === customEntry.name && email.trim() === customEntry.email && message.startsWith(customEntry.messageStartsWith)) {
             document.getElementById('mainContent').style.display = 'none';
             const gameScreen = document.getElementById('gameScreen');
             gameScreen.style.display = 'block';
             document.getElementById('gameIframe').src = message;
-            alert("Custom Website go BRRRRRRRRRRRRRRRRR!!!");
-        } else if (name.trim() === "Stickmanhook" && email.trim() === "stickman@hook.com" && message.trim() === "Stickmanhook") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://stickman.pro/iframe/index.html";
-            alert("Weeeeeeeeee!");
-        } else if (name.trim() === "Fancade" && email.trim() === "fancade@fancade.com" && message.trim() === "Fancade") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://play.fancade.com/";
-            alert("Fancaaaaaaaaaaaaaade!!");
-        }
-        else if (name.trim() === "Bloons" && email.trim() === "bloons@monkey.com" && message.trim() === "Bloons") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://bloons-towerdefense.github.io/file/";
-            alert("Munke");
-        }
-        else if (name.trim() === "List" && email.trim() === "computer@chippp.com" && message.trim() === "NoGamezHere") 
-            {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "Formulas/index.html";
-            alert("GAMING TEST");
-        }
-        else if (name.trim() === "GetAway" && email.trim() === "get@away.com" && message.trim() === "Pew") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://spew45.github.io/simple-games-assets/src/getaway-shootout/";
-            alert("Oh shoot");
-        }
-        else if (name.trim() === "Spew" && email.trim() === "spew@45.com" && message.trim() === "Spew45") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://spew45.github.io/";
-            alert("UnblockedGames");
-        }
-        else if (name.trim() === "Eugene" && email.trim() === "eugene@eugene.eugene" && message.trim() === "Eugene") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://htmlxm.github.io/h4/eugenes-life";
-            alert("Eugene");
-        }
-        if (name.trim() === "List" && email.trim() === "list@list.com" && message.trim() === "Games") {
-            // Show the games section if the input matches
-            document.getElementById('mainContent').style.display = 'none';
-            document.getElementById('games').style.display = 'block';
-        } 
-        else if (name.trim() === "Backflip" && email.trim() === "backflip@3d.com" && message.trim() === "Look Mom!") {
-            document.getElementById('mainContent').style.display = 'none';
-            const gameScreen = document.getElementById('gameScreen');
-            gameScreen.style.display = 'block';
-            document.getElementById('gameIframe').src = "https://spew45.github.io/game-assets/backflip-dive-3d/";
-            alert("Yahoo");
-        }
-            
-        else {
+            alert(customEntry.alert);
+        } else {
             alert("Invalid input. Please try again!");
         }
     }
@@ -152,7 +92,7 @@
 </script>
 </head>
 <body>
-    <header style="background-image: url('img_girl.jpg')";>
+    <header style="background-image: url('https://imgur.com/a/ZMtq3af');">
         <h1>Schülerhilfen</h1>
         <h2>Die drei binomischen Formeln</h2>
         <nav>
@@ -166,24 +106,23 @@
     </header>
 
     <p>Der sichere Umgang mit Termumformungen ist eine wichtige Grundlage für das Verständnis von Mathematik.</p>
-<p>Die binomischen Formeln werden meist in Klasse 8 eingeführt. Sie sind Voraussetzung für die Bestiimmung von Hauptnennern bei Bruchgleichungen und für das Verständnis der Lösungsformel quadratischer Gleichungen.</p>
-<p>Die Grundlage für das Verständnis der binomischen Formeln wiederum ist das Distributivgesetz a ( b + c ) = ab + ac und die dazugehörigen Fertigkeiten: "Ausmultiplizieren und Ausklammern". Daher sollte dieser Inhalt bei der Einführung der binomischen Formeln wieder aufgegriffen werden.</p>
-<p>Diese Fertigkeiten werden dann auf die Multiplikation von Summen</p>
-<p>( a + b ) ( c + d ) = ac + ad + bc + bd erweitert.</p>
-<p>Im nächsten Schritt werden dann die drei binomischen Formeln eingeführt:</p>
+    <p>Die binomischen Formeln werden meist in Klasse 8 eingeführt. Sie sind Voraussetzung für die Bestimmung von Hauptnennern bei Bruchgleichungen und für das Verständnis der Lösungsformel quadratischer Gleichungen.</p>
+    <p>Die Grundlage für das Verständnis der binomischen Formeln wiederum ist das Distributivgesetz a ( b + c ) = ab + ac und die dazugehörigen Fertigkeiten: "Ausmultiplizieren und Ausklammern". Daher sollte dieser Inhalt bei der Einführung der binomischen Formeln wieder aufgegriffen werden.</p>
+    <p>Diese Fertigkeiten werden dann auf die Multiplikation von Summen</p>
+    <p>( a + b ) ( c + d ) = ac + ad + bc + bd erweitert.</p>
+    <p>Im nächsten Schritt werden dann die drei binomischen Formeln eingeführt:</p>
     <h3>1. Binomische Formel :</h3>
-<h3>( a + b )² = ( a + b ) ( a + b ) = a² + 2ab + b²</h3>
-<h3>2. Binomische Formel :</h3>
-<h3>( a - b )² = ( a - b ) ( a - b ) = a² - 2ab + b²</h3>
-<h3>3. Binomische Formel :</h3>
-<h3>( a + b ) ( a - b ) = a² - b²</h3>
+    <h3>( a + b )² = ( a + b ) ( a + b ) = a² + 2ab + b²</h3>
+    <h3>2. Binomische Formel :</h3>
+    <h3>( a - b )² = ( a - b ) ( a - b ) = a² - 2ab + b²</h3>
+    <h3>3. Binomische Formel :</h3>
+    <h3>( a + b ) ( a - b ) = a² - b²</h3>
     <p>Eine methodische Hilfe bei der Einführung der 1. Binomische Formel ist die geometrische Veranschaulichung des Zusammenhangs.</p>
-<p>Dabei entsprechen die Variablen a und b Streckenlängen, die Produkte a·b Rechtecksflächen a² und b² Quadratflächen.</p>
 
     <main id="mainContent">
         <section id="home">
             <h2>Home</h2>
-            <p>Wilkommen zu Schplerhilfen</p>
+            <p>Wilkommen zu Schülerhilfen</p>
         </section>
 
         <section id="about">
@@ -195,7 +134,7 @@
             <h2>Fächer</h2>
             <p>Möchtest noch mehr lernen? Siehe hier nach!</p>
             <ul>
-               <li><a>Mathe</a></li>
+                <li><a>Mathe</a></li>
                 <li><a>Deutsch</a></li>
                 <li><a>Englisch</a></li>
                 <li><a>Geschichte</a></li>
@@ -205,7 +144,7 @@
         </section>
 
         <section id="contact">
-            <h3>Wünschts du dir weitere Themen? War etwas nicht klar? Kontaktiere uns!</h3>
+            <h3>Wünschst du dir weitere Themen? War etwas nicht klar? Kontaktiere uns!</h3>
             <form onsubmit="handleFormSubmission(event)">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -220,8 +159,8 @@
             </form>
         </section>
     </main>
-    
-    <section id="games" style="display: none;">
+
+  <section id="games" style="display: none;"> 
         <h2>Games</h2>
         <p>Wut da haaaaail oh ma gawd:</p>
         <ul>
@@ -230,7 +169,7 @@
             <li><a href="#" onclick="loadGame('Stacktris', 'https://play.fancade.com/5BEC8352E4E078B1')">Stacktris</a></li>
             <input type="url" id="customLink" name="CustomLink" pattern="https?://.*" placeholder="http://example.com" required>
             <button type="submit">Submit</button>
-            <li><a id="gameLink" href="#" onclick="loadGame('Custom', 'https://example.com')">Custom Game</a></li> <!-- You can replace with actual URL -->
+            <li><a id="gameLink" href="#" onclick="loadGame('Custom', 'https://example.com')">Custom Game</a></li>
             <li><a href="#" onclick="loadGame('Stickmanhook', 'https://stickman.pro/iframe/index.html')">Stickmanhook</a></li>
             <li><a href="#" onclick="loadGame('Fancade', 'https://play.fancade.com/')">Fancade</a></li>
             <li><a href="#" onclick="loadGame('Bloons', 'https://bloons-towerdefense.github.io/file/')">Bloons Tower Defense</a></li>
@@ -245,7 +184,29 @@
         <iframe id="gameIframe" src="" title="Game"></iframe>
         <br>
         <button onclick="location.reload()">Return to Site</button>
+        <button id="toggleButton">Toggle iFrame Size</button>
     </div>
+    
+    
+    <script>
+        const toggleButton = document.getElementById('toggleButton');
+        const iframe = document.getElementById('gameIframe');
+
+        let isMinimized = false;
+
+        toggleButton.addEventListener('click', () => {
+            if (isMinimized) {
+                iframe.style.width = '600px';
+                iframe.style.height = '400px';
+                toggleButton.textContent = 'Toggle iFrame Size';
+            } else {
+                iframe.style.width = '0px';
+                iframe.style.height = '0px';
+                toggleButton.textContent = 'Restore iFrame Size';
+            }
+            isMinimized = !isMinimized;
+        });
+    </script>
 
     <footer>
         <p>&copy; 2024 NoiseMath. All rights reserved.</p>
